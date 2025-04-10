@@ -1,5 +1,7 @@
-function indexPrime(param1){
+function indexPrime(param1) {
+    for (let i = 2; i <= 29; i++) {
 
+    }
 }
 
 console.log(indexPrime(4))
