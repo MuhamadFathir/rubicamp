@@ -1,12 +1,13 @@
-function jumlahkanAngka(n) {
-  const angka = []
-  let total = 1;
+function cetakAngka(n) {
+  let hasil = [];
 
-  for (let i = 0; i < n.length; i++) {
-    total *= n[i]
+  for (let i = 2; i <= n; i++) {
+    hasil.push(i);
   }
 
-  return total
+  return hasil;
 }
 
-console.log(jumlahkanAngka(10)); // Output: undefined ❌
+// console.log di luar fungsi
+
+console.log(cetakAngka(4));
