@@ -1,13 +1,20 @@
 function cetakAngka(n) {
   let hasil = [];
-
-  for (let i = 2; i <= n; i++) {
-    hasil.push(i);
+  let num1 = 0
+  let num2 = 0
+  for (let i = 1; i <= n; i++) {
+    num1 = (6 * i) - 1
+    hasil.push(num1)
   }
 
-  return hasil;
+  for (let i = 1; i <= n; i++) {
+    num2 = (6 * i) + 1
+    hasil.push(num2);
+  }
+
+  return hasil
 }
 
 // console.log di luar fungsi
 
-console.log(cetakAngka(4));
+console.log(cetakAngka(10));
