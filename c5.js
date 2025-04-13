@@ -7,5 +7,5 @@ function stringManipulation(word) {
 
 }
 
-stringManipulation("ayam")
+stringManipulation("ikan")
 stringManipulation("bebek")
