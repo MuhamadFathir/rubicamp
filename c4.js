@@ -5,29 +5,26 @@ function isPrime(num) {
             result += 1
         }
     }
-     if(result == 2){
+    if (result == 2) {
         return true
-     }else{
+    } else {
         return false
-     }
+    }
 }
 
-// console.log(isPrime(1))
-// console.log(isPrime(17))
-// console.log(isPrime(51))
-
-
-
-
 function indexPrime(param1) {
-    for(let i = 1; i <= param1; i++){
-        if(isPrime(i)){
-            console.log(i)
+    let counter = 0
+    for (let i = 1; i >= 0; i++) {
+        if (isPrime(i)) {
+            counter++
+        }
+        if (counter === param1) {
+            return i
         }
     }
 }
-indexPrime(20)
-// console.log(indexPrime(5))
-// console.log(indexPrime(4))
-// console.log(indexPrime(500))
-// console.log(indexPrime(37768))
+// indexPrime(20)
+console.log(indexPrime(4))
+console.log(indexPrime(10))
+console.log(indexPrime(500))
+console.log(indexPrime(37768))
