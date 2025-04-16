@@ -1,14 +1,17 @@
 function pola(str) {
     let hasil = []
     let test = str.split(" ")
-    console.log(test.toString().replace("#", 8))
-    
-    // for (let i = 0; i <= test.length; i++) {
-    //     for (let j = 0; j <= test.length; j++) {
-            
-    //     }
-    // }
+    for (let i = 0; i <= 9; i++) {
+        for (let j = 0; j <= 9; j++) {
+            if (test[0].replace("#", i) * test[2] == test[4].replace("#", j)) {
+                hasil.push(i, j)
+                return hasil
+            }
+
+        }
+    }
+
 }
 
 console.log(pola("42#3 * 188 = 80#204"))
-// console.log(pola("8#61 * 895 = 78410#5"))
+console.log(pola("8#61 * 895 = 78410#5"))
