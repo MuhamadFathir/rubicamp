@@ -6,9 +6,10 @@ function spiral(param1) {
         for (let j = 0; j < param1; j++) {
             arr[i][j] = num
             num++
+
         }
+        console.log(arr[i])
     }
-    console.log(arr)
 }
 
 spiral(5)
