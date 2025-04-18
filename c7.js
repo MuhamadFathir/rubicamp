@@ -1,5 +1,5 @@
 function weirdMultiply(sentence) {
-    let num = 1 //3
+    let num = 1
     let result = sentence.toString()
     for (let i = 0; i < result.length; i++) {
         num *= result[i]
