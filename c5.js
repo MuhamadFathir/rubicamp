@@ -6,6 +6,6 @@ function stringManipulation(word) {
     }
 
 }
-stringManipulation("ikan dan ayam")
+stringManipulation("ikan")
 stringManipulation("ayam")
-stringManipulation("bebek dan anjing")
+stringManipulation("bebek")

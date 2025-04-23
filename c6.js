@@ -1,18 +1,14 @@
-function stringManipulation(word) {
-    if ("aiueo".includes(word[0].toLowerCase())) {
-        return word
-    } else {
-        return word.slice(1).concat(word[0], "nyo")
-    }
-
-}
-
 
 function sentencesManipulation(sentence) {
     let hasil = []
     let test = sentence.split(" ")
     for (let i = 0; i < test.length; i++) {
-        hasil.push(stringManipulation(test[i]))
+        if ("aiueo".includes(test[i][0].toLowerCase())) {
+            hasil.push(test[i])
+        } else {
+            hasil.push(test[i].slice(1).concat(test[i][0], "nyo"))
+        }
+
     }
     console.log(hasil.toString().replace(/,/g, " "))
 }
