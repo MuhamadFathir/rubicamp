@@ -18,7 +18,7 @@ rl.on('line', (line) => {
         }
 
     }
-    console.log(hasil.toString().replace(/,/g, " "))
+    console.log("hasil konversi :", hasil.toString().replace(/,/g, " "))
   rl.prompt();
 }).on('close', () => {
   console.log('Good Bye!');
