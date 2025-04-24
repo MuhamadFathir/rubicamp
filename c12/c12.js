@@ -9,9 +9,9 @@ const rl = createInterface({
     output: process.stdout,
     prompt: 'tebakan:',
 });
-// console.log("pertanyaan :", quest[0].definition)
-let count = 1
-let num = 0
+
+let count = 1 // salah
+let num = 0 //urutan array
 console.log("pertanyaan :", quest[num].definition)
 rl.prompt();
 
@@ -19,11 +19,15 @@ rl.on('line', (line) => {
     if (line == quest[num].term) {
         console.log("Selamat Anda Benar!")
         num++
-        if (num === 3) {
+        if (num == quest.length) {
             rl.close()
-            i++
         }
         count = 1
+        console.log("pertanyaan :", quest[num].definition)
+
+    } else if (line == "skip") {
+        quest.push(quest[num])
+        num++
         console.log("pertanyaan :", quest[num].definition)
     } else {
         console.log(`Anda kurang beruntung! anda telah salah ${count} kali, silahkan coba lagi`)
