@@ -1,6 +1,6 @@
 
-if(!process.argv[2]){
-    console.log("Harus di isi!!!")
+if (!process.argv[2]) {
+    console.log("Soal Harus di isi!!!")
     process.exit(0);
 }
 const quest = require(`../c12/${process.argv[2]}`)
