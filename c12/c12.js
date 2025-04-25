@@ -1,6 +1,8 @@
 
-
-const { error } = require("node:console");
+if(!process.argv[2]){
+    console.log("Harus di isi!!!")
+    process.exit(0);
+}
 const quest = require(`../c12/${process.argv[2]}`)
 
 const { createInterface } = require('node:readline');
@@ -29,6 +31,7 @@ rl.on('line', (line) => {
         quest.push(quest[num])
         num++
         console.log("pertanyaan :", quest[num].definition)
+        count = 1
     } else {
         console.log(`Anda kurang beruntung! anda telah salah ${count} kali, silahkan coba lagi`)
         count++
