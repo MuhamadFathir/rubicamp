@@ -1,8 +1,7 @@
 [
   {
-    "title": "saya mau pergi ke pasar"
-  },
-  {
-    "title": "saya mau tidur"
+    "title": "saya mau makan",
+    "complete": false,
+    "tags": []
   }
 ]
