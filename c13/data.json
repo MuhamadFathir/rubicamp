@@ -1,7 +1,30 @@
 [
   {
-    "title": "saya mau makan",
+    "title": "saya mau masak sayur",
     "complete": false,
+    "tags": [
+      "sayur"
+    ]
+  },
+  {
+    "title": "saya ingin pergi ke sekolah",
+    "complete": true,
     "tags": []
+  },
+  {
+    "title": "saya mau main catur",
+    "complete": false,
+    "tags": [
+      "olahraga",
+      "otak"
+    ]
+  },
+  {
+    "title": "saya main badminton",
+    "complete": true,
+    "tags": [
+      "olahraga",
+      "olahraga"
+    ]
   }
 ]

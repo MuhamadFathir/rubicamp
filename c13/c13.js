@@ -14,7 +14,7 @@ if (!process.argv[2]) {
     process.exit(0);
 }
 
-const { writeFileSync, readFileSync } = require('node:fs');
+const { writeFileSync } = require('node:fs');
 
 let task = require(`../c13/data.json`)
 
@@ -42,14 +42,24 @@ if (process.argv[2] == "add") {
 } else if (process.argv[2] == 'list:outstanding') {
     console.log('Daftar Pekerjaan')
     for (let i = 0; i < task.length; i++) {
-        if (task[i].complete == false) {
+        if (process.argv[3] == "asc" && task[i].complete == false) {
+            console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
+        }
+    }
+    for (let i = task.length - 1; i >= 0; i--) {
+        if (process.argv[3] == "desc" && task[i].complete == false) {
             console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
         }
     }
 } else if (process.argv[2] == 'list:completed') {
     console.log('Daftar Pekerjaan')
     for (let i = 0; i < task.length; i++) {
-        if (task[i].complete == true) {
+        if (process.argv[3] == "asc" && task[i].complete == true) {
+            console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
+        }
+    }
+    for (let i = task.length - 1; i >= 0; i--) {
+        if (process.argv[3] == "desc" && task[i].complete == true) {
             console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
         }
     }
@@ -60,14 +70,11 @@ if (process.argv[2] == "add") {
         writeFileSync('data.json', JSON.stringify(task, null, 2), 'utf-8',)
     }
 } else if (process.argv[2].startsWith('filter:')) {
-    // console.log(process.argv[2].slice(7))
-    // console.log(task[0].tags.toString())
     console.log('Daftar Pekerjaan')
     for (let i = 0; i < task.length; i++) {
-        for (let j = 0; j < task.length; j++) {
-            if (task[i].tags[j] == process.argv[2].slice(7)) {
-                console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
-            }
+        if (task[i].tags.includes(`${(process.argv[2].slice(7))}`) == true) {
+            console.log(`${i + 1}. ${task[i].complete ? '[x]' : '[ ]'} ${task[i].title}`)
         }
+
     }
 }
