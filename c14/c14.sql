@@ -1,4 +1,4 @@
-
+sqlite3 university.db
 
 create table jurusan (
     kode_jurusan character(5) primary key not null,
@@ -58,7 +58,7 @@ create table mengajar (
 
 insert into mengajar values 
 ('01', '001', 'BI101'),
-('02', '002', 'MT202');
+('02', '002', 'MT201');
 
 
 
