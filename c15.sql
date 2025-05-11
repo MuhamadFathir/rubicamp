@@ -8,7 +8,7 @@ select nama_mahasiswa, umur from mahasiswa where umur < '20';
 select nama_mahasiswa, nilai from belajar join mahasiswa using (nim) where nilai <= 'B';
 
 -- case 4
-select nama_mahasiswa, sks from belajar join mahasiswa using (nim) join mata_kuliah using (kode_matkul) where sks > '10';
+select nama_mahasiswa, sum(sks) as total_sks from belajar join mahasiswa using (nim) join mata_kuliah using (kode_matkul) group by nama_mahasiswa having sks > '10';
 
 -- case 5
 select nama_mahasiswa, nama_matkul from belajar join mahasiswa using (nim) join mata_kuliah using (kode_matkul) where nama_matkul like 'data mining';
