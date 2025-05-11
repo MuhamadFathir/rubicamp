@@ -11,22 +11,23 @@ insert into jurusan values
 CREATE TABLE mahasiswa (
     nim character(4) primary key not null, nama_mahasiswa varchar(100) not null, 
     alamat varchar(100), kode_jurusan character(5) not null, 
+    umur varchar(2) not null, 
     foreign key(kode_jurusan) references jurusan(kode_jurusan));
 
-insert into mahasiswa (nim, nama_mahasiswa, alamat, kode_jurusan) values 
-('7389', 'fathir', 'banten', '62201'),
-('2536', 'iqbal', 'bandung', '23201'),
-('5237', 'aria', 'sumedang', '62201');
+insert into mahasiswa (nim, nama_mahasiswa, alamat, kode_jurusan, umur) values 
+('7389', 'fathir', 'banten', '62201', '18'),
+('2536', 'iqbal', 'bandung', '23201', '20'),
+('5237', 'aria', 'sumedang', '62201', '19');
 
 CREATE TABLE mata_kuliah (
-    id_matkul character(3) primary key not null, 
-    nama_matkul varchar(100) not null, SKS varchar(20) not null, 
-    nim character(4) not null, foreign key(nim) references mahasiswa(nim));
+    kode_matkul character(3) primary key not null, 
+    nama_matkul varchar(100) not null, 
+    SKS varchar(20) not null);
 
-insert into mata_kuliah (id_matkul, nama_matkul, sks, nim) values 
-('001', 'Matematika', '12', '7389'),
-('002', 'bahasa indonesia', '10', '2536'),
-('003', 'bahasa indonesia', '12', '5237');
+insert into mata_kuliah (kode_matkul, nama_matkul, sks) values 
+('001', 'Matematika', '12'),
+('002', 'data mining', '10'),
+('003', 'data mining', '12');
 
 
 CREATE TABLE dosen (
@@ -55,16 +56,6 @@ insert into belajar values
 
 
 
--- koreksi 
-alter table mahasiswa add column umur text;
-update mahasiswa set umur = '18' where nim = '7389';
-update mahasiswa set umur = '20' where nim = '2536';
-update mahasiswa set umur = '19' where nim = '5237';
-
-
-update mata_kuliah set sks = '12' where id_matkul = '003';
-update mata_kuliah set sks = '10' where id_matkul = '002';
-update mata_kuliah set nama_matkul = 'data mining' where id_matkul = '002';
 
 
 
