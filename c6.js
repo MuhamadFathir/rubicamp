@@ -10,7 +10,7 @@ function sentencesManipulation(sentence) {
         }
 
     }
-    console.log(hasil.toString().replace(/,/g, " "))
+    console.log(hasil.join(" "))
 }
 
 sentencesManipulation("ibu pergi ke pasar bersama aku")
