@@ -46,16 +46,14 @@ class CarFactory {
     }
 
     produce(year) {
-        //sn
-        const uuid = crypto.randomUUID();
-        // produksi rush
+
         for (let i = 0; i < CarFactory.count(); i++) {
-            this.cars.push(new Agya('Agya', uuid, 5, 5, year, 1))
+            this.cars.push(new Agya('Agya', crypto.randomUUID(), 5, 5, year, 1))
 
         }
 
         for (let i = 0; i < CarFactory.count(); i++) {
-            this.cars.push(new Rush('Rush', uuid, 5, 5, year, 3))
+            this.cars.push(new Rush('Rush', crypto.randomUUID(), 5, 5, year, 3))
 
         }
 
@@ -79,13 +77,40 @@ warranty: ${this.cars[i].warranty} year
     }
 
     guaranteeSimulation(simulationYear) {
+        console.log(`hasil simulasi garansi semua mobil pada tahun ${simulationYear} :`);
+        for (let i = 0; i < this.cars.length; i++) {
+            if (this.cars[i].year + this.cars[i].warranty !== simulationYear) {
+                console.log(`
+no.${i + 1}
+varian  : ${this.cars[i].varian}
+sn      : ${this.cars[i].sn}
+door    : ${this.cars[i].door}
+seat    : ${this.cars[i].seat} seater
+tyre    : ${this.cars[i].tyre.brand} ${this.cars[i].tyre.size} inch
+year    : ${this.cars[i].year}
+warranty: ${this.cars[i].warranty} year
 
+status on ${simulationYear} this guarantee is expired`)
+            } else {
+                console.log(`
+no.${i + 1}
+varian  : ${this.cars[i].varian}
+sn      : ${this.cars[i].sn}
+door    : ${this.cars[i].door}
+seat    : ${this.cars[i].seat} seater
+tyre    : ${this.cars[i].tyre.brand} ${this.cars[i].tyre.size} inch
+year    : ${this.cars[i].year}
+warranty: ${this.cars[i].warranty} year
+
+status on ${simulationYear} this guarantee is active`)
+            }
+
+        }
     }
 }
 
 const toyota = new CarFactory()
-// console.log(CarFactory.count())
 toyota.produce(2020)
 toyota.produce(2022)
 toyota.result()
-// toyota.guaranteeSimulation(2025)
+toyota.guaranteeSimulation(2025)
