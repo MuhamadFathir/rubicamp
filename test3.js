@@ -1,8 +1,11 @@
-const names = ['Ari', 'Budi', 'Cici'];
-const hobbies = ['Baca', 'Main bola', 'Ngoding'];
 
-for (let i = 0; i < names.length; i++) {
-  for (let j = 0; j < hobbies.length; j++) {
-    console.log(`${names[i]} suka ${hobbies[j]}`);
-  }
+
+let random = 'abcdefghijklmnopqrstuvwxyz0123456789'
+let result = ''
+for (let i = 0; i < 10; i++) {
+  result += huruf[Math.floor(Math.random() * huruf.length)];
+
 }
+console.log(result);
+
+
