@@ -45,25 +45,17 @@ class CarFactory {
         return Math.floor(Math.random() * 10)
     }
 
-    static random() {
-        let random = 'abcdefghijklmnopqrstuvwxyz0123456789'
-        let result = ''
-        for (let i = 0; i < 10; i++) {
-            result += random[Math.floor(Math.random() * random.length)];
-        }
-        return result 
-    }
-    
-
     produce(year) {
+        //sn
+        const uuid = crypto.randomUUID();
         // produksi rush
         for (let i = 0; i < CarFactory.count(); i++) {
-            this.cars.push(new Agya('Agya', CarFactory.random(), 5, 5, year, 1))
+            this.cars.push(new Agya('Agya', uuid, 5, 5, year, 1))
 
         }
 
         for (let i = 0; i < CarFactory.count(); i++) {
-            this.cars.push(new Rush('Rush', CarFactory.random(), 5, 5, year, 3))
+            this.cars.push(new Rush('Rush', uuid, 5, 5, year, 3))
 
         }
 
