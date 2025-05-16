@@ -79,7 +79,7 @@ warranty: ${this.cars[i].warranty} year
     guaranteeSimulation(simulationYear) {
         console.log(`hasil simulasi garansi semua mobil pada tahun ${simulationYear} :`);
         for (let i = 0; i < this.cars.length; i++) {
-            if (this.cars[i].year + this.cars[i].warranty !== simulationYear) {
+            if (this.cars[i].year + this.cars[i].warranty < simulationYear) {
                 console.log(`
 no.${i + 1}
 varian  : ${this.cars[i].varian}
@@ -112,5 +112,7 @@ status on ${simulationYear} this guarantee is active`)
 const toyota = new CarFactory()
 toyota.produce(2020)
 toyota.produce(2022)
-toyota.result()
+toyota.produce(2023)
+
+// toyota.result()
 toyota.guaranteeSimulation(2025)
