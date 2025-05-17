@@ -11,7 +11,8 @@
 
     {
         "definition": "sebutkan kota yang memiliki julukan kota intan",
-        "term": "Garut"
+        "term": "Garut",
+        "type": "module"
     }
 
 ]
